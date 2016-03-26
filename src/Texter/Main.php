@@ -38,13 +38,14 @@ $y = $sender->getZ();
 $z = $sender->getZ();
 $level = $sender->getLevel();
 $text = implode(" ", $args);
-$this->config->set("Texter", array(
+$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
+$config->set("Texter", array(
 "x" => $x,
 "y" => $y,
 "z" => $z,
 "world" => $level,
 "text" => $text,));
-$this->config->save();
+$config->save();
 $position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
 $player->getLevel()->addParticle(new FloatingTextParticle($position, $text));
         }
