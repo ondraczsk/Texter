@@ -20,7 +20,11 @@ use pocketmine\math\Vector3;
 class Main extends PluginBase{
     
     public function onEnable(){
-        $this->getLogger()->info(Color::GREEN . "Enabled!");
+        $this->getLogger()->info(Color::GREEN ."[Texter]Enabled!");
+    }
+    
+    public function onDisable(){
+    	$this->getLogger()->info(Coloe::RED ."[Texter]Disabled");
     }
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
