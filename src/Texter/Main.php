@@ -21,14 +21,14 @@ use pocketmine\utils\config;
 class Main extends PluginBase{
     
     public function onEnable(){
-        $this->getLogger()->info(Color::GREEN ."[Texter]Enabled!");
+        $this->getLogger()->info(Color::GREEN ."Enabled!");
         @mkdir($this->getDataFolder());
 	$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
 	$config->save();
     }
     
     public function onDisable(){
-    	$this->getLogger()->info(Coloe::RED ."[Texter]Disabled");
+    	$this->getLogger()->info(Color::RED ."Disabled");
     }
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
@@ -37,7 +37,7 @@ class Main extends PluginBase{
 	$position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
         $sender->getLevel()->addParticle(new FloatingTextParticle($position, $text)); 
         $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-        $config->set($position,$text);
+        $config->set("Texter",$position,$text);
         $config->save();
         }
         return true;
