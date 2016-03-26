@@ -24,6 +24,7 @@ class Main extends PluginBase{
         $this->getLogger()->info(Color::GREEN ."Enabled!");
         @mkdir($this->getDataFolder());
 	$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
+	$this->saveResource("config.yml");
     }
     
     public function onDisable(){
@@ -44,6 +45,7 @@ $config->set("Texter", array(
 "z" => $z,
 "world" => $level,
 "text" => $text,));
+$this->saveResource("config.yml");
 $position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
 $sender->getLevel()->addParticle(new FloatingTextParticle($position, $text));
         }
