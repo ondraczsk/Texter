@@ -1,3 +1,6 @@
----[]
-
-...
+Texter:
+x: xPos
+y: yPos
+z: zPos
+world: SomeRandomWorld
+text: the text lol ok
