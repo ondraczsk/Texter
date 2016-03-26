@@ -45,7 +45,7 @@ $this->config->set("Texter", array(
 "world" => $level,
 "text" => $text,));
 $this->config->save();
-$position = $x, $y + 0.5, $z;
+$position = new Vector3($sender->x, $sender->y + 0.5, $sender->z);
 $player->getLevel()->addParticle(new FloatingTextParticle($position, $text));
         }
         return true;
