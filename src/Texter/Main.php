@@ -37,7 +37,7 @@ class Main extends PluginBase{
         $x = $sender->getX();
         $y = $sender->getZ();
         $z = $sender->getZ();
-        $position = $x, $y, $x;
+        $position = $x->$y->$z;
         $level = $sender->getLevel();
         $sender->getLevel()->addParticle(new FloatingTextParticle($position, $text)); 
         $this->config->set("Texter", array(
