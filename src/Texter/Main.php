@@ -24,7 +24,7 @@ class Main extends PluginBase{
         $this->getLogger()->info(Color::GREEN ."[Texter]Enabled!");
         @mkdir($this->getDataFolder());
 	$config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
-	$config2->save();
+	$config->save();
     }
     
     public function onDisable(){
