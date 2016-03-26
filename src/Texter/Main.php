@@ -33,19 +33,20 @@ class Main extends PluginBase{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if($cmd->getName() == "texter"){
-	$text = implode(" ", $args);
-        $x = $sender->getX();
-        $y = $sender->getZ();
-        $z = $sender->getZ();
-        $position = $x, $y + 0.5, $z;
-        $level = $sender->getLevel();
-        $sender->getLevel()->addParticle(new FloatingTextParticle($position, $text)); 
-        $this->config->set("Texter", array(
-        "x" => $x,
-        "y" => $y,
-        "z" => $z,
-        "world" => $level,));
-        $this->config->save();
+$x = $sender->getX();
+$y = $sender->getZ();
+$z = $sender->getZ();
+$level = $sender->getLevel();
+$text = implode(" ", $args);
+$this->config->set("Texter", array(
+"x" => $x,
+"y" => $y,
+"z" => $z,
+"world" => $level,
+"text" => $text,));
+$this->config->save();
+$position = $x, $y + 0.5, $z;
+$player->getLevel()->addParticle(new FloatingTextParticle($position, $text));
         }
         return true;
     }
