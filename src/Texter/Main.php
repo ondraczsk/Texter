@@ -34,7 +34,7 @@ class Main extends PluginBase{
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if($cmd->getName() == "texter"){
 $x = $sender->getX();
-$y = $sender->getZ();
+$y = $sender->getY();
 $z = $sender->getZ();
 $level = $sender->getLevel();
 $text = implode(" ", $args);
