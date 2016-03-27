@@ -1,7 +1,7 @@
 name: Texter
 author: ImagicalGamer
 main: Texter\Main
-api: 1.14.0
+api: 1.13.0
 version: 1.0.0
 commands:
  texter:
